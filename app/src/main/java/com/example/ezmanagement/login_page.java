@@ -26,12 +26,15 @@ public class login_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
         firebaseauth = FirebaseAuth.getInstance();
+        ed1 = findViewById(R.id.user_txt);
+        ed2 = findViewById(R.id.pass_txt);
+        btn_login = findViewById(R.id.login_btn);
         btn_login.setOnClickListener(view ->{
             toPortal();
         });
     }
 
-    private void toPortal() {
+    public void toPortal() {
         String username = ed1.getText().toString();
         String password = ed2.getText().toString();
 

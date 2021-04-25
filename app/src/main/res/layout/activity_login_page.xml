@@ -44,7 +44,6 @@
         android:id="@+id/login_btn"
         android:layout_width="150dp"
         android:layout_height="66dp"
-        android:onClick="toPortal"
         android:text="Login"
         app:backgroundTint="#5B22FF"
         app:layout_constraintBottom_toBottomOf="parent"

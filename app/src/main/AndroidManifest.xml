@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ezmanagement">
-        <activity android:name=".upload_pdf"></activity>
+        <activity android:name=".upload_pdf"/>
         <activity android:name=".report_fac" />
         <activity android:name=".lecture_fac" />
         <activity android:name=".attendance_fac" />
@@ -21,14 +21,14 @@
         <activity android:name=".faculty_page" />
         <activity android:name=".student_page" />
         <activity android:name=".login_page" />
-        <activity android:name=".MainActivity"/>
         <activity android:name=".data_retrieve"/>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MainActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
     </application>
 
 </manifest>

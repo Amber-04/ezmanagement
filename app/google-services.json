@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "652082303997",
+    "project_id": "ez-management-868c5",
+    "storage_bucket": "ez-management-868c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:652082303997:android:56bf675238acd5baf83f94",
+        "android_client_info": {
+          "package_name": "com.example.ezmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "652082303997-rag16s4iru991c3qfclipv22l94tnj1c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ezmanagement",
+            "certificate_hash": "94b06f83ea6da9ed6c726a9207b8dd248db3cf11"
+          }
+        },
+        {
+          "client_id": "652082303997-hldehch87athhn9p98e7004r0rpkl1i3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgNi4_NrHnXQg3AGBYsZDz8MHu2IOvnaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "652082303997-hldehch87athhn9p98e7004r0rpkl1i3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

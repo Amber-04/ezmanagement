@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ezmanagement">
-        <activity android:name=".report_fac"></activity>
+        <activity android:name=".upload_pdf"></activity>
+        <activity android:name=".report_fac" />
         <activity android:name=".lecture_fac" />
         <activity android:name=".attendance_fac" />
         <activity android:name=".test_fac" />

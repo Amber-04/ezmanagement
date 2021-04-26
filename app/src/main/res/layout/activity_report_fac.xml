@@ -20,8 +20,8 @@
 
     <Spinner
         android:id="@+id/spinner_rep_fac"
-        android:layout_width="325dp"
-        android:layout_height="38dp"
+        android:layout_width="379dp"
+        android:layout_height="47dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -23,7 +23,7 @@ public class attendance_fac extends AppCompatActivity implements AdapterView.OnI
         spin = findViewById(R.id.spinner_atn_fac);
         atn_btn = findViewById(R.id.fac_chk_atn_btn);
         spin.setOnItemSelectedListener(this);
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,courses);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.spinner_item,courses);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(arrayAdapter);
     }

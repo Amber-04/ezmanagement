@@ -49,4 +49,6 @@ public class faculty_page extends AppCompatActivity {
             }
         });
     }
+
+
 }

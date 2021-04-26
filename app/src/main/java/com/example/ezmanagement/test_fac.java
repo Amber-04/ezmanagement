@@ -39,13 +39,13 @@ import java.util.Calendar;
 public class test_fac extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     String[] courses = {"Mobile Application Development", "Data structures",
             "Software Engineering", "Artificial Intelligence",
-            "Probability And Statistics", "Image Processing", "Python Programming", "Image Processing", "Java Programming"};
+            "Probability And Statistics", "Image Processing", "Python Programming", "Java Programming"};
     FirebaseStorage storage;
     FirebaseDatabase database;
     ProgressDialog progressDialog;
 
     Spinner spin;
-    Button atn_btn;
+    Button test_btn;
     TextView dateFormat;
     int year;
     int month;
@@ -56,7 +56,7 @@ public class test_fac extends AppCompatActivity implements AdapterView.OnItemSel
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_fac);
         spin = findViewById(R.id.spinner_test_fac);
-        atn_btn = findViewById(R.id.fac_test_btn);
+        test_btn = findViewById(R.id.fac_test_btn);
         dateFormat = findViewById(R.id.dateFormatID2);
         storage = FirebaseStorage.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -66,7 +66,7 @@ public class test_fac extends AppCompatActivity implements AdapterView.OnItemSel
         ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.spinner_item, courses);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(arrayAdapter);
-        atn_btn.setOnClickListener(view -> {
+        test_btn.setOnClickListener(view -> {
             if (ContextCompat.checkSelfPermission(test_fac.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                 selectPDF();
                 if (pdfUri != null) {

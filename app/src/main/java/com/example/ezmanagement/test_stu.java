@@ -23,7 +23,7 @@ public class test_stu extends AppCompatActivity implements AdapterView.OnItemSel
         spin = findViewById(R.id.spinner_stu_test);
         atn_btn = findViewById(R.id.test_quiz_btn);
         spin.setOnItemSelectedListener(this);
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,courses);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.spinner_item,courses);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(arrayAdapter);
 

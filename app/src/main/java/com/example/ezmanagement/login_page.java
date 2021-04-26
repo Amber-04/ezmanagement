@@ -53,9 +53,21 @@ public class login_page extends AppCompatActivity {
             firebaseauth.signInWithEmailAndPassword(username, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
-                        Toast.makeText(login_page.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(login_page.this,data_retrieve.class));
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    if(task.isSuccessful() && user != null){
+                        String username = user.getEmail().toString();
+                        String s =username.substring(0,1);
+                        if(s.equals("s"))
+                        {
+                            Toast.makeText(login_page.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(login_page.this,student_page.class));
+                        }
+                        else if(s.equals("f"))
+                        {
+                            Toast.makeText(login_page.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(login_page.this,faculty_page.class));
+                        }
+
                     }
                 }
             });

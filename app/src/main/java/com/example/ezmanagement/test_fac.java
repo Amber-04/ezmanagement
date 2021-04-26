@@ -24,10 +24,15 @@ public class test_fac extends AppCompatActivity implements AdapterView.OnItemSel
         spin = findViewById(R.id.spinner_test_fac);
         atn_btn = findViewById(R.id.fac_test_btn);
         spin.setOnItemSelectedListener(this);
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,courses);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.spinner_item,courses);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(arrayAdapter);
-    }
+        atn_btn.setOnClickListener(view ->{
+            Intent i = new Intent(test_fac.this, upload_pdf.class);
+            startActivity(i);
+        });
+        }
+
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {

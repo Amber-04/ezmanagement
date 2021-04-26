@@ -23,7 +23,7 @@ public class report_stu extends AppCompatActivity implements AdapterView.OnItemS
         spin = findViewById(R.id.spinner_report_stu);
         atn_btn = findViewById(R.id.marks_btn);
         spin.setOnItemSelectedListener(this);
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,courses);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.spinner_item,courses);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(arrayAdapter);
     }

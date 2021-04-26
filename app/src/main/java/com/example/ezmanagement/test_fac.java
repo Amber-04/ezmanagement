@@ -150,7 +150,6 @@ public class test_fac extends AppCompatActivity implements AdapterView.OnItemSel
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
         String item = adapterView.getItemAtPosition(position).toString();
         Toast.makeText(getApplicationContext(),item,Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(test_fac.this, upload_pdf.class);
     }
 
     @Override

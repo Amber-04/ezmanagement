@@ -61,6 +61,8 @@ public class attendance_fac extends AppCompatActivity implements AdapterView.OnI
         ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.spinner_item,courses);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(arrayAdapter);
+        storage = FirebaseStorage.getInstance();
+        database = FirebaseDatabase.getInstance();
 
         Calendar calendar = Calendar.getInstance();
         dateFormat.setOnClickListener(new View.OnClickListener() {
@@ -98,7 +100,7 @@ public class attendance_fac extends AppCompatActivity implements AdapterView.OnI
 
         final String filename=System.currentTimeMillis()+"";
         StorageReference storageReference=storage.getReference();
-        storageReference.child("Uploads").child(filename).putFile(pdfUri)
+        storageReference.child("attendance").child(filename).putFile(pdfUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {

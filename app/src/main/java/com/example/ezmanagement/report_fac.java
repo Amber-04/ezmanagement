@@ -50,6 +50,8 @@ public class report_fac extends AppCompatActivity implements AdapterView.OnItemS
         ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.spinner_item,courses);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(arrayAdapter);
+        storage = FirebaseStorage.getInstance();
+        database = FirebaseDatabase.getInstance();
 
         rep_btn.setOnClickListener(view -> {
             if (ContextCompat.checkSelfPermission(report_fac.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {

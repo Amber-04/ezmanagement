@@ -24,8 +24,8 @@
     <Spinner
         android:id="@+id/spinner_stu_test"
 
-        android:layout_width="325dp"
-        android:layout_height="38dp"
+        android:layout_width="351dp"
+        android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

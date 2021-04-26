@@ -103,7 +103,8 @@ public class test_fac extends AppCompatActivity implements AdapterView.OnItemSel
         progressDialog.setProgress(0);
         progressDialog.show();
 
-        final String filename=System.currentTimeMillis()+"";
+        final String filename=System.currentTimeMillis()+".pdf";
+        final String filename1 = System.currentTimeMillis()+"";
         StorageReference storageReference=storage.getReference();
         storageReference.child("Uploads").child(filename).putFile(pdfUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -111,7 +112,7 @@ public class test_fac extends AppCompatActivity implements AdapterView.OnItemSel
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         String url=taskSnapshot.getMetadata().getReference().getDownloadUrl().toString();
                         DatabaseReference reference=database.getReference();
-                        reference.child(filename).setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        reference.child(filename1).setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful())

@@ -21,7 +21,6 @@
         <activity android:name=".faculty_page" />
         <activity android:name=".student_page" />
         <activity android:name=".login_page" />
-        <activity android:name=".data_retrieve"/>
         <activity android:name=".MainActivity">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />

@@ -80,9 +80,10 @@ public class lecture_fac extends AppCompatActivity implements AdapterView.OnItem
                 datePickerDialog.show();
             }
         });
+
         atn_btn = findViewById(R.id.lecture_btn);
         spin.setOnItemSelectedListener(this);
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,courses);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.spinner_item,courses);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(arrayAdapter);
     }

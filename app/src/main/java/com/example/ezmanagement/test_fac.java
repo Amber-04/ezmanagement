@@ -2,6 +2,7 @@ package com.example.ezmanagement;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -26,7 +27,10 @@ public class test_fac extends AppCompatActivity implements AdapterView.OnItemSel
         ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.spinner_item,courses);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(arrayAdapter);
-
+        atn_btn.setOnClickListener(view ->{
+            Intent i = new Intent(test_fac.this, upload_pdf.class);
+            startActivity(i);
+        });
         }
 
 

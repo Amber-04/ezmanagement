@@ -8,6 +8,20 @@
     android:background="@drawable/faculty_attendance">
 
     <TextView
+        android:id="@+id/dateFormatID3"
+        android:layout_width="199dp"
+        android:layout_height="31dp"
+        android:text="Set Date"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.242" />
+
+    <TextView
         android:id="@+id/textView6"
         android:layout_width="62dp"
         android:layout_height="31dp"
@@ -39,12 +53,11 @@
 
     <Spinner
         android:id="@+id/spinner_atn_fac"
-        android:layout_width="325dp"
+        android:layout_width="356dp"
         android:layout_height="38dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333"
-        />
+        app:layout_constraintVertical_bias="0.333" />
 </androidx.constraintlayout.widget.ConstraintLayout>

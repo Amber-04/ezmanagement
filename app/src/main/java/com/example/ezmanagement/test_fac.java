@@ -7,6 +7,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -16,7 +17,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,6 +33,9 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class test_fac extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     String[] courses = {"Mobile Application Development", "Data structures",
             "Software Engineering", "Artificial Intelligence",
@@ -40,6 +46,10 @@ public class test_fac extends AppCompatActivity implements AdapterView.OnItemSel
 
     Spinner spin;
     Button atn_btn;
+    TextView dateFormat;
+    int year;
+    int month;
+    int day;
     Uri pdfUri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,28 +57,44 @@ public class test_fac extends AppCompatActivity implements AdapterView.OnItemSel
         setContentView(R.layout.activity_test_fac);
         spin = findViewById(R.id.spinner_test_fac);
         atn_btn = findViewById(R.id.fac_test_btn);
+        dateFormat = findViewById(R.id.dateFormatID2);
         storage = FirebaseStorage.getInstance();
         database = FirebaseDatabase.getInstance();
 
 
-
         spin.setOnItemSelectedListener(this);
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.spinner_item,courses);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.spinner_item, courses);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(arrayAdapter);
-        atn_btn.setOnClickListener(view ->{
-            if(ContextCompat.checkSelfPermission(test_fac.this, Manifest.permission.READ_EXTERNAL_STORAGE)== PackageManager.PERMISSION_GRANTED)
-            {
+        atn_btn.setOnClickListener(view -> {
+            if (ContextCompat.checkSelfPermission(test_fac.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                 selectPDF();
                 if (pdfUri != null) {
                     uploadFile(pdfUri);
                 }
-            }
-            else{
+            } else {
                 ActivityCompat.requestPermissions(test_fac.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 9);
-        }
+            }
         });
-        }
+
+
+        Calendar calendar = Calendar.getInstance();
+        dateFormat.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                year = calendar.get(Calendar.YEAR);
+                month = calendar.get(Calendar.MONTH);
+                day = calendar.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(test_fac.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        dateFormat.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
+
+                    }
+                }, year, month, day);
+                datePickerDialog.show();
+            }
+        });
+    }
 
     private void uploadFile(Uri pdfUri) {
         progressDialog=new ProgressDialog(this);
